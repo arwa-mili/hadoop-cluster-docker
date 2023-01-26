@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y openssh-server openjdk-8-jdk wget vim
 # install hadoop 3.3.0
 RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-3.0.0/hadoop-3.0.0.tar.gz && \
 tar -xzvf hadoop-3.3.0.tar.gz && \
-    mv hadoop-3.3.0 /usr/local/hadoop && \
-    rm hadoop-3.3.0.tar.gz
+    mv hadoop-3.3.0 /usr/local/hadoop 
+   
 
 # set environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 
