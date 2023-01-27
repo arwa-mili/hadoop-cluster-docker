@@ -8,8 +8,8 @@ WORKDIR /root
 RUN apt-get update && apt-get install -y openssh-server openjdk-8-jdk wget vim
 
 # install hadoop 3.3.0
-
-RUN https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz &&\
+    
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz &&\
     tar -xzvf hadoop-3.3.0.tar.gz && \
     mv hadoop-3.3.0 /usr/local/hadoop && \
     rm hadoop-3.3.0.tar.gz
