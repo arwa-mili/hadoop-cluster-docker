@@ -20,6 +20,14 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run : |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        - name: Generate tags
+        id: docker_tags
+        uses: dnaka91/action-docker-tags@v0.1
+        with:
+          registries: |
+            docker.io
+            ghcr.io
+            quay.io
 
     - run: docker push ${{secrets.DOCKER_USER}}/cluster-hadoop-singlenode:testhadoop
     
