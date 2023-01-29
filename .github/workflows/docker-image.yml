@@ -21,7 +21,8 @@ jobs:
       run : |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag chamodshehanka/node-test:$(date +%s)
+       sudo docker build -t kiwenlau/hadoop:1.0 .
+ 
     - run: docker push ${{secrets.DOCKER_USER}}/cluster-hadoop-singlenode
          
 
