@@ -21,8 +21,8 @@ jobs:
       run : |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag cluster-hadoop-singlenode/node-test:$(date +%s)
-    - run: docker push ${{secrets.DOCKER_USER}}/YOU_DOCKER_HUB_CLUSTER
+        run: docker build . --file Dockerfile --tag YOU_DOCKER_HUB_REPO8NAME/node-test:$(date +%s)
+    - run: docker push ${{secrets.DOCKER_USER}}/YOU_DOCKER_HUB_REPO8NAME
     
         
          
