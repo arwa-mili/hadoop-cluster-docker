@@ -21,7 +21,7 @@ jobs:
       run : |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-    - run: docker push ${{secrets.DOCKER_USER}}/cluster-hadoop-singlenode
+    - run: docker push ${{secrets.DOCKER_USER}}/cluster-hadoop-singlenode:testhadoop
     
         
          
