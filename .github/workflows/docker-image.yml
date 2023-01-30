@@ -21,9 +21,9 @@ jobs:
       run : |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-       sudo docker build -t kiwenlau/hadoop:1.0 .
+       sudo docker build . --file Dockerfile --tag arwamili/cluster-hadoop-singlenode:$(date +%s)
  
-    - run: docker push ${{secrets.DOCKER_USER}}/cluster-hadoop-singlenode
+    - run: docker push ${{secrets.DOCKER_USER}}/YOUR_DOCKER_HUB_REPO_NAME
          
 
 
